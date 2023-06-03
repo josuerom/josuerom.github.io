@@ -1,0 +1,76 @@
+---
+layout: post
+title: "Qué es la recursividad?"
+date: 31-05-2023
+excerpt: "josuerom"
+tags: [recursion]
+comments: true
+---
+# ¿Qué es la recursividad?
+*Hola a todos, como últimamente me he sentido un poco aburrido, decidí escribir un tutorial para ustedes y animarnos un poco :< ¡Comencemos!*
+
+## 1. Concepto de recursividad
+> In order to understand recursion, one must first understand recursion.
+
+El concepto de recursividad puede resultar difícil de entender para un programador principiante, por lo tanto, examinemos algunos ejemplos concretos antes de adentrarnos en su concepto completo.
+> *"Imagina que vas a tu habitación para cambiarte de ropa rápidamente y llegar a tiempo al trabajo. Pero te das cuenta de que la habitación está cerrada y sabes que tu hijo de 3 años ha escondido las llaves en una caja. Al abrir la caja, te das cuenta de que contiene más cajas dentro, y dentro de ellas hay más cajas más pequeñas. Te sientes confundido y necesitas encontrar una solución rápida para no llegar tarde al trabajo."*
+- Para abordar este problema, tenemos dos enfoques: "**iteración**" *(loop)* y "**recursividad**" *(recursion)* para crear un algoritmo.
+![Lặp và đệ quy](https://cdn-images-1.medium.com/max/800/1*QrQ5uFKIhK3jQSFYeRBIRg.png)
+- En el enfoque de iteración, utilizamos un bucle. Mientras haya cajas, tomarás una caja de la pila y la abrirás.
+  - **Caso 1** : Si encuentras las llaves :v ¡Felicidades, has tenido éxito!
+  - **Caso 2** : Pero si tienes mala suerte y encuentras más cajas, vuelve a colocarlas en la pila y repite el proceso.
+> *"Ilustraré esto con un pseudocódigo en C++, utilizando una cola para almacenar la pila:"*:
+``` cpp
+void look_for_key()
+{
+   bool ok = false;
+   queue < box > pile;
+   pile.push(main_box);
+   while(!pile.empty()) {
+      box this = pile.front();
+      pile.pop();
+      for(item_in_this)
+         if(is_a_key(item)) ok =true,break;
+         else // item is a box
+            q.push(item);
+         if(ok)  break;
+   }
+}
+```
+- En el enfoque de recursividad, utilizamos una llamada **recursiva**. Recuerda siempre que la recursividad es una función que se llama a sí misma.
+``` cpp
+// init ok = false;
+void look_for_key(box)
+{
+    if(ok)
+        break;
+    for(item_in_this)
+        if(is_a_key(item))
+            ok =true, break;
+        else // item is a box
+            look_for_key(item);
+}
+```
+> "**Análisis** Observamos que abrimos la caja y, si encontramos la llave, ¡entonces hemos completado! Pero si encontramos otra caja, realizamos las mismas acciones que cuando abrimos la caja inicial."
+
+##### A través del ejemplo anterior, en cierta medida, pueden imaginar qué es la recursividad.
+> "**Rrecursividad** es un método utilizado en la programación en el que una función se llama a sí misma."
+
+## 2. Mecanismo de recursividad en la informática
+El ejemplo anterior puede hacer que pienses que la recursividad es complicada, no es simple y te desanime :< Sin embargo, esfuérzate porque hay muchos algoritmos que utilizan la recursividad en la informática. Ahora consideremos otro ejemplo aplicado de la recursividad, que es el mecanismo de la pila al llamar a funciones.
+>*"En ciencias de la computación, una pila (también llamada estructura de datos de pila, en inglés: stack) es una estructura de datos abstracta que sigue una estrategia de "último en entrar, primero en salir" (Last In First Out, LIFO)" - Wikipedia."*
+- La **recursividad** generalmente utiliza el mecanismo de pila **LIFO** (Last In First Out) al realizar llamadas a funciones.
+- Cuando se llama a una función recursiva, se coloca al principio de la pila. Imagina que tienes una pila de libros, al poner o quitar un libro, siempre priorizas el libro en la parte superior.
+![stack](https://visualgo.net/img/stack_illustration.png)
+##### Consideremos un ejemplo específico relacionado con las matemáticas, el cálculo del factorial.
+También tenemos 2 enfoques, iterativo y **recursivo**, pero aquí solo consideraremos el enfoque de la **recursividad**. Te mostraré cómo funciona el mecanismo de la pila en una llamada recursiva. Primero, escribiré una función recursiva para calcular el factorial de un número.
+> Ejemplo: El factorial de 5 se calcula de la siguiente manera:  `factorial (5) =  5 * 4 * 3 * 2 * 1 = 5!`
+``` cpp
+int fact(int x) // factorial
+{
+    if(x==1) return 1;
+    return fact(x-1)*x;
+}
+```
+- Ahora veamos qué sucede cuando llamamos a la función factorial de 3 `fact(3)`:
+![illustration](https://cdn-images-1.medium.com/max/800/1*YRkMsMPRFAt8Y9BiC0QVDg.png)
