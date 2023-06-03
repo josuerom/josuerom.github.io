@@ -21,4 +21,4 @@ comments: false
 *¡Sí, esas cosas y más dentro de su alcance! :v ¡jaja! Siguiendo el lema de [Aaron Swartz](https://en.wikipedia.org/wiki/Aaron_Swartz) quien hackeó el sistema del MIT para publicar conocimiento, él siempre creía que el conocimiento debe ser libre para que todos puedan aumentar su comprensión!*
 > Descansa en paz, aunque acabo de conocer sobre ti gracias a un amigo y ahora estás en un lugar muy lejano lamentablemente :v
 
-- *Contáctame en: [josuerom](https://www.facebook.com/josueromr/)*
+- *[Contáctame](https://www.facebook.com/josueromr/)*
