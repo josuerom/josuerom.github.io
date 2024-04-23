@@ -1,3 +1,1 @@
-# josuerom.github.io
-Blog-Portafolio
-Link: https://josuerom.github.io/
+Link del blog: https://josuerom.github.io/
